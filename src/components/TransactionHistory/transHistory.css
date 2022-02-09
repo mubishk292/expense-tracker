@@ -1,0 +1,55 @@
+.userList{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.userList li{
+    background-color: #fff;
+   box-shadow: var(--box-shadow);
+   color: #333;
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+   padding: 10px;
+   margin: 10px 0;
+}
+#perTransaction{
+ box-shadow: 2px 2px 2px grey;   
+}
+.amount{
+    font-size: 1.5em;
+    display: inline-block;
+    margin-right: 50px;
+}
+.mainAmount{
+    float: right;
+}
+.positive{
+    border-right: 5px solid green;
+}
+.negative{
+    border-right: 5px solid red;
+}
+
+.del-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+ 
+.userList li:hover .del-btn {
+   opacity: 1;
+}
+.delete-btn:focus {
+    outline: 0;
+ }

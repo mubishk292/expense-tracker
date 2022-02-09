@@ -1,0 +1,22 @@
+.mainDiv{
+    width: 400px;
+    margin: auto;
+}
+
+.mainIncomeBox{
+    background-color: salmon;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.incomeDiv{
+    flex: 1 1;
+    border-right: 1px solid red;
+}
+.expenseDiv{
+    flex: 1 1;
+}
+
+

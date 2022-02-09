@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import ExpenseForm from './components/expense-form/expenseForm';
+import TranscHistory from './components/TransactionHistory/transcHistory';
+import AddTransaction from './components/addTransaction/addTransaction';
+// import {ThemeContext } from "./store/store";
+import { createContext , useState } from 'react';
+
+
+export const ThemeContext = createContext();
+
 
 function App() {
+  let  [transactions,setTransaction] = useState([]);
+  
+  const deleteTransaction = (data)=>{
+
+      setTransaction([...data])
+  }
+
+  const getTransaction =  (item)=>{
+      // console.log(item);
+       setTransaction([...transactions ,item])
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={{transactions: transactions , getTransaction:getTransaction , deleteTransaction :deleteTransaction}}>
+      <div className='fullForm'>
+        <ExpenseForm></ExpenseForm>
+        <TranscHistory></TranscHistory>
+        <AddTransaction></AddTransaction>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
